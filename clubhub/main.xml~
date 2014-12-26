@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+        <section>
+                <title>Welcome to Club Hub!</title>
+                <content><![CDATA[<p>Club Hub is a place to find everything about IMSA's clubs all on one site! Say goodbye to a cluttered inbox and welcome a new age of clear and organized club communications. </p><p>Club Hub is still a work in progress, but it's a reached a point where it's ready to be tested by the student body. If you spot any b&#368;g<i>s</i>, or if you have any questions or comments in general, send us an email at <a href="mailto:imsaundefined@gmail.com">imsaundefined@gmail.com</a>.</p>]]></content>
+        </section>
+		<section>
+				<title>Calendar</title>
+				<calendar>
+						<source>
+							<name>IMSA Universal Event Calendar</name>
+							<src>src=l74nl67gvjc836srqffrjodtog%40group.calendar.google.com&amp;color=%23AB8B00&amp;</src>
+						</source>
+						<source>
+							<name>Academic Calendar</name>
+							<src>src=roecatofrvpmef33tfb87ick2o%40group.calendar.google.com&amp;color=%2329527A&amp;</src>
+						</source>
+						<source>
+							<name>Athletics</name>
+							<src>src=5msqdpfk00a1vllfnd5jtg4o94%40group.calendar.google.com&amp;color=%23711616&amp;</src>
+						</source>
+						<source>
+							<name>IMSA Hall and Wing Events</name>
+							<src>src=nsbgeink85uv9s8oc5ud16khec%40group.calendar.google.com&amp;color=%236B3304&amp;</src>
+						</source>
+						<source>
+							<name>Internal Events</name>
+							<src>src=pourbd35bfguqto5ia0iopmcl0%40group.calendar.google.com&amp;color=%23B1440E&amp;</src>
+						</source>
+						<source>
+							<name>StudCo Universal</name>
+							<src>src=0ermls6517e1l6rj8lp2nvghsg%40group.calendar.google.com&amp;color=%333FF00&amp;</src>
+						</source>
+						<source>
+							<name>Hatikvah</name>
+							<src>src=9vjcdr0oikhp4au01atj0ir5no%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FChicago</src>
+						</source>
+						<source>
+							<name>Alma Latina</name>
+							<src>src=2i5cdq08gp1n55o4hqefsnpgro%40group.calendar.google.com&amp;color=%235F6B02&amp;</src>
+						</source>
+						
+				</calendar>
+		</section>
+        <section>
+                <title>News</title>
+                <content>All news for all students.</content>
+		<feed>https://imsastudentsl.blogspot.com/</feed>
+        </section>
+</body>

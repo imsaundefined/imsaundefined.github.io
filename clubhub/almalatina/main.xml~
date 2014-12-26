@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+        <section>
+                <title>Alma Latina</title>
+                <content>Alma Latina hopes to spread the Latino culture across campus and form an Alianza Hispana (“a community based non-profit organization serving the Latino community and all residents of the surrounding neighborhoods”) through interactive events and the love of the culture within each member.</content>
+        </section>
+		<section>
+				<title>Calendar</title>
+				<calendar>
+                                                <source>
+                                                        <name>Alma Latina</name>
+                                                        <src>src=0ermls6517e1l6rj8lp2nvghsg%40group.calendar.google.com&amp;color=%333FF00&amp;</src>
+                                                </source>
+                                </calendar>
+		</section>
+        <section>
+                <title>News</title>
+                <content>The latest and greatest from Alma Latina.</content>
+		<feed>https://imsastudentslalmalatina.blogspot.com/</feed>
+        </section>
+</body>
+

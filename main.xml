@@ -1,0 +1,17 @@
+<body>
+    <section>
+			<title>Solutions by the Students, for the Students.</title>
+			<content><![CDATA[
+					<p>Welcome to the home of IMSA Undefined, a loosely associated group of students ready to invigorate the IMSA community.
+					Focused on creating better solutions to problems previously unworkable under traditional top-down methods,
+					we're building campus innovations from the ground up by working directly within the student body to forward progress and advance the human condition.</p>
+					<p>Our duty is to improve life and academics on campus by providing services to IMSA students, built by the students for the students. In this way, we create an ecosystem in which students help their fellow peers better the student body as a whole, allowing us to envision futures that are more innovative and revolutionary than ever before.</p>
+					<h2>Integrity, Impact, Innovation: IMSA Undefined.</h2>]]>
+			</content>
+	</section>
+	<section>
+	        <title>News</title>
+	        <content>The Latest from IMSA Undefined.</content>
+	        <feed>https://imsaundefined.blogspot.com</feed>
+        </section>
+</body>

@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	/*background: url("../media/starburst.png");*/
+	background: url("../media/undefbars.png");
+	background-size: 30%;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	/*background-color: rgb(50, 120, 224);*/
+	background-color: white;
+	font-family: 'Roboto', serif;
+	margin: 0%;
+	padding: 0%;
+}
+
+h1, h2 {
+	font-family: 'Roboto Slab', serif;
+}
+
+.body-box {
+	margin: 2% 0%;
+	background-color: rgba(255, 255, 255, 1);
+	padding: 2%;
+	border: 1px solid rgb(200, 200, 200);
+	/*border-radius: 2px;*/
+	/*box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);*/
+}
+
+.content-box
+{
+        margin: 2% 5%;
+        padding: 5%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgb(200,200,200);
+	border-radius: 2px;
+	box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2),
+	        -0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2);
+        
+}
+
+.body-box-clear {
+	margin: 2% 10%;
+	padding: 2%;
+	border-radius: 2em;
+}
+
+.footer {
+	background-color: black;
+	margin-top: 5%;
+	padding: 2% 12%;
+	clear: both;
+}
+
+.branding-box {
+	margin: 0;
+}
+
+#undefined-logo {	
+	width: 50%;
+	height: auto;
+}
+
+img.footer-logo {
+        width: 5%;
+        height: auto;
+        vertical-align: bottom;
+}
+
+footer {
+	color: white;
+}
+
+.menu
+{
+	border-radius: 2px;
+	background-color: rgb(60,60,200);
+	margin: 2% 0%;
+	/*box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);*/
+}
+
+.menu ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.menu li
+{
+	float: left;
+}
+
+.menu a:link, .menu a:visited
+{
+	display: block;
+	color: white;
+	background-color: none;
+	text-align: center;
+	text-decoration: none;
+	padding: 20px;
+}
+
+.menu a:hover, .menu a:active
+{
+	background-color: rgba(256,256,256,0.3);
+	/*border-radius: 2em;*/
+}
+
+.feed
+{
+        margin: 2% 2%;
+	padding: 2%;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 1em;
+}
+
+.feed .feedtitle
+{
+        padding: 0px;
+        margin: 0px;
+}
+
+.feed .feedcontent
+{
+        float:left;
+}
+
+.feed img
+{
+        float: left;
+        margin: 2%;
+        max-width: 30%;
+}
+
+.subtitle
+{
+        color: rgb(50,50,50);
+        font-size: 80%;
+        display: inline;
+        margin-right: 1em;
+}
+
+hr
+{
+        border-width: 1px;
+        border-style: dashed;
+        border-color: rgb(60, 60, 200);
+}

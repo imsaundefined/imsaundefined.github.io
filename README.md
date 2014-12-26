@@ -1,4 +1,4 @@
-imsaundefined.github.io
-=======================
+IMSA Undefined
+================
 
-The latest on imsaundefined.org.
+Homepage for IMSA Undefined.

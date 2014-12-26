@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+        <section>
+                <title>Hatikvah</title>
+                <content>IMSA's Jewish Cultural Club. </content>
+        </section>
+		<section>
+				<title>Calendar</title>
+				<calendar>
+                                                <source>
+                                                        <name>StudCo</name>
+                                                        <src>src=0ermls6517e1l6rj8lp2nvghsg%40group.calendar.google.com&amp;color=%333FF00&amp;</src>
+                                                </source>
+                                </calendar>
+		</section>
+        <section>
+                <title>News</title>
+                <content>The latest and greatest from StudCo.</content>
+		<feed>http://imsastudentslhatikvah.blogspot.com/</feed>
+        </section>
+</body>
+

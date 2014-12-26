@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+        <section>
+                <title>Quiz Bowl</title>
+                <content>Quiz Bowl is a buzzer-based team competition that tests students' knowledge of academic topics.</content>
+        </section>
+		<section>
+				<title>Calendar</title>
+				<calendar>
+                                                <source>
+                                                        <name>Quiz Bowl</name>
+                                                        <src>src=2nfeb2tk7i8s5vbd0rqa32bpd8%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FChicago</src>
+                                                </source>
+                                </calendar>
+		</section>
+        <section>
+                <title>News</title>
+                <content>The latest and greatest from StudCo.</content>
+		<feed>https://imsastudentslstudco.blogspot.com/</feed>
+        </section>
+</body>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+        <section>
+                <title>IMSA Student Productions</title>
+                <content><![CDATA[Serving the student body by producing beautiful media about life at IMSA. Official homepage: <a href="https://imsastudentproductions.com/">imsastudentproductions.com</a>]]></content>
+        </section>
+		<section>
+				<title>Calendar</title>
+				<calendar>
+                                                <source></source>
+                                </calendar>
+		</section>
+        <section>
+                <title>News</title>
+                <content>The latest and greatest from ISP.</content>
+		<feed>https://imsastudentslisp.blogspot.com/</feed>
+        </section>
+</body>
+
