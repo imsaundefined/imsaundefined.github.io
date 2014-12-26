@@ -1,0 +1,107 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+<style>
+.centerdiv{
+width: 500px;
+margin: 10% auto 10% auto;
+padding: 5%;
+border: 1px solid gray;
+box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+td{
+margin: 5%;
+min-width: 100px;
+}
+footer{
+margin-top: 10%;
+}
+.error, .important
+{
+color:red;
+}
+.sucess
+{
+color:green;
+}
+</style>
+<script>
+function submissionResult(result) {
+    var div = document.getElementById("output");
+    toggle_visibility("uploading", false);
+    if(result=="good")
+    {
+         var page = document.getElementById("pagediv");
+         page.innerHTML = "<p><b>Thank you! Your poster was sucessfully submitted.</b></p>";
+         page.className = "sucess";
+    }
+    else if(result=="not full")
+    {
+         div.innerHTML = "<b>Some of the fields are empty. Please fill them in.</b>";
+         div.className = "error";
+    }
+    else
+    {
+         div.innerHTML = "<b>Uh oh. Something went wrong. Please try again.</b>";
+         div.className = "error";
+    }
+    
+}
+
+function toggle_visibility(id, visible) {
+    var e = document.getElementById(id);
+    if(!visible)
+      e.style.display = 'none';
+    else
+      e.style.display = 'block';
+}
+
+function submitForm()
+{
+    google.script.run.withSuccessHandler(submissionResult).processForm(document.getElementById('theform')); 
+    toggle_visibility('uploading', true);
+    
+    /*var required = ["clubname", "postertitle"];
+    var filled=true;
+    for(i=0; i<required.length; i++)
+    {
+         if(document.form["theform"][required[i]]==null || document.form["theform"][required[i]]=="")
+         {
+              filled=false;
+              break;
+         }
+    }
+    if(filled)
+    {
+         google.script.run.withSuccessHandler(submissionResult).processForm(document.getElementById('theform')); 
+         toggle_visibility('uploading');
+    }
+    else
+    {
+         var out = document.getElementById("output");
+         out.innerHTML = "Fill in the form!!!";
+         out.className = "error";
+    }*/
+}
+
+</script>
+</head>
+<body>
+<div id="pagediv" class="centerdiv">
+<h1><b>Post-ed! Service by Club Hub</b></h1>
+<p class="important">*Required Fields</p>
+<form id="theform" name="theform" action="https://script.google.com/macros/s/AKfycbwLVNPqyX1c_ScEQ9bxxr-ENTSadiaeWZeSO_AfUC9N/dev" method="POST">
+<tr><td>Club Name:*</td><td><input type="text" name="clubname"></td></tr>
+<tr><td>Poster Title:*</td><td><input type="text" name="postertitle"></td></tr>
+<tr><td>Poster Caption:*</td><td><textarea name="postercaption" cols="50" rows="5"></textarea></td></tr>
+<tr><td>Date of Event:*</td><td><input type="date" name="posterdate"></td></tr>
+<tr><td>Poster File:*</td><td><input id="imgInp" type="file" name="thefile"></td></tr>
+<tr><td><input type="button" value="Submit" onclick="submitForm()" /></td><td><p id="uploading" style="display: none">Your poster is being uploaded. Please wait...</p></tr>
+</form>
+<div id="output"></div>
+<footer>Copyright &copy; imsa #undefined 2014</footer>
+</div>
+</body>
+</html>
+

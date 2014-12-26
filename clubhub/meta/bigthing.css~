@@ -11,9 +11,7 @@ body, html
 
 body 
 {
-	background-size: 30%;
-	background-repeat: repeat;
-	background-image: url("/media/undefbars.png");
+	background-color: white;
 	font-family: 'Roboto', serif;
 	margin: 0;
 	padding: 0;
@@ -29,7 +27,6 @@ div
 .wall
 {
 	height: 100%;
-	/*padding: 0.666%;*/
 	text-align: justify;
 }
 
@@ -65,7 +62,7 @@ div
 
 .mitem
 {
-        width: 10%;
+        width: 20%;
         float: left;
 	position: relative;
 	background-color: white;
@@ -81,12 +78,12 @@ div
 
 .mitem.large
 {
-        width: 30vw;
+        width: 40%;
 }
 
 .mitem.medium
 {
-        width: 20vw;
+        width: 20%;
 }
 
 .verybigtitle
@@ -108,6 +105,9 @@ div
 
 #backcover
 {
+	/*background: url("/imsa-undefined/clubhub/media/Academy.jpg");
+	background-size: 100%;
+	background-position: center;*/
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -147,45 +147,6 @@ div
 	height: auto%;
 	opacity: 0.5;
 	z-index: 2;
-}
-
-.menu
-{
-	border-radius: 2px;
-	background-color: rgb(60,60,200);
-	margin: 2% 0%;
-	position: fixed;
-	z-index: 2;
-	/*box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);*/
-}
-
-.menu ul
-{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
-.menu li
-{
-	float: left;
-}
-
-.menu a:link, .menu a:visited
-{
-	display: block;
-	color: white;
-	background-color: none;
-	text-align: center;
-	text-decoration: none;
-	padding: 20px;
-}
-
-.menu a:hover, .menu a:active
-{
-	background-color: rgba(256,256,256,0.3);
-	/*border-radius: 2em;*/
 }
 
 /* Isotope Animations */
@@ -252,7 +213,9 @@ div
 
 .fancybox-skin
 {
-        background-color: rgb(170,170,170) !important;
+        background-color: #FFFFFF !important;
+        border-radius: 2px !important;
+        color: black !important;
 }
 
 /*clearfix*/
@@ -265,7 +228,7 @@ div
 .fancybox-title {
         float: right;
         width: 45% !important;
-        padding: 0 !important;
+        padding: 10% !important;
 }
 
 .fancybox-title iframe

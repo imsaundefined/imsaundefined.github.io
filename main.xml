@@ -1,17 +1,15 @@
 <body>
     <section>
-			<title>Solutions by the Students, for the Students.</title>
+			<title>Undefine old perceptions. Rethink what can be done.</title>
 			<content><![CDATA[
-					<p>Welcome to the home of IMSA Undefined, a loosely associated group of students ready to invigorate the IMSA community.
-					Focused on creating better solutions to problems previously unworkable under traditional top-down methods,
-					we're building campus innovations from the ground up by working directly within the student body to forward progress and advance the human condition.</p>
-					<p>Our duty is to improve life and academics on campus by providing services to IMSA students, built by the students for the students. In this way, we create an ecosystem in which students help their fellow peers better the student body as a whole, allowing us to envision futures that are more innovative and revolutionary than ever before.</p>
-					<h2>Integrity, Impact, Innovation: IMSA Undefined.</h2>]]>
+					<p>Welcome to the home of IMSA Undefined, a group of students ready to invigorate the IMSA community. We're proving first-hand that ordinary people <i>do</i> have the power to improve their community through service, determination, and spirit.</p>
+					<p>Focused on bringing a touch of magic back into the academy, our goal is to imagine new possibilities for the future of IMSA, innovate upon what we have to get there, and inspire other students to do the same and make a positive impact on the world around them. We're doing this by improving life and academics on campus through services to IMSA students, built by the students for the students. In an ecosystem where students help their fellow peers better the student body as a whole, we can envision futures that are brighter and more awesome than ever before.</p>
+					<h2>Imagine. Innovate. Inspire. >>> IMSA Undefined</h2>]]>
 			</content>
 	</section>
-	<section>
+	<!--<section>
 	        <title>News</title>
 	        <content>The Latest from IMSA Undefined.</content>
 	        <feed>https://imsaundefined.blogspot.com</feed>
-        </section>
+        </section>-->
 </body>

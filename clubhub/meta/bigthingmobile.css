@@ -6,7 +6,7 @@
 
 body, html
 {
-	height: 100%;
+	height: 100vh;
 	margin: 0;
 	padding: 0;
 	
@@ -16,7 +16,7 @@ body
 {
 	background-size: 30%;
 	background-repeat: repeat;
-	background-image: url("/media/undefbars.png");
+	background-image: url("/imsa-undefined/media/undefbars.png");
 	font-family: 'Roboto', serif;
 	overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ div
 
 .wall
 {
-	height: 100%;
+	height: 100vh;
 	text-align: justify;
 }
 
@@ -42,7 +42,7 @@ div
 
 .mitem img
 {
-        max-width: 100%;
+        max-width: 100vw;
         height: auto;
         display: inline-block;
         margin: 0px;
@@ -65,7 +65,7 @@ div
 
 .mitem
 {
-        width: 40%;
+        width: 40vw;
         float: left;
 	position: relative;
 	background-color: white;
@@ -81,12 +81,12 @@ div
 
 .mitem.large
 {
-        width: 100%;
+        width: 100vw;
 }
 
 .mitem.medium
 {
-        width: 60%;
+        width: 60vw;
 }
 
 .verybigtitle
@@ -102,14 +102,17 @@ div
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 10%;
-	width: 100%;
+	height: 10vh;
+	width: 100vw;
 }
 
 #backcover
 {
-	width: 100%;
-	height: 100%;
+	/*background: url("/imsa-undefined/clubhub/media/Academy.jpg");
+	background-size: 100%;
+	background-position: center;*/
+	width: 100vw;
+	height: 100vh;
 	position: relative;
 	background: black;
 }
@@ -119,12 +122,12 @@ div
 	background-size: 100%;
 	background-position: center;
 	opacity: 0;
-	width: 110%;
-	height: 110%;
-	top: -5%;
-	left: -5%;
-	right: -5%;
-	bottom: -5%;
+	width: 110vw;
+	height: 110vh;
+	top: -5vh;
+	left: -5vw;
+	right: -5vw;
+	bottom: -5vh;
 	position: relative;
 }
 
@@ -133,18 +136,18 @@ div
 	z-index: 2;
 	opacity: 0;
 	background-color: rgba(0,0,0,0.3);
-	padding: 5% 0%;
+	padding: 5vh 0;
 }
 
 #downarrow
 {
         position: absolute;
-	bottom: -25%;
+	bottom: -25vh;
 	left: 0;
 	right: 0;
-	width: 10%;
+	width: 10vw;
 	margin: 0 auto;
-	height: auto%;
+	height: auto;
 	opacity: 0.5;
 	z-index: 2;
 }
@@ -153,7 +156,7 @@ div
 {
 	border-radius: 2px;
 	background-color: rgb(60,60,200);
-	margin: 2% 0%;
+	margin: 2vh 0;
 	position: fixed;
 	z-index: 2;
 	/*box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);*/

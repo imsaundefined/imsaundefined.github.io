@@ -57,7 +57,7 @@ h1, h2
         border-radius: 5px;
 }
 
-.protip p
+.protip p, .protip a
 {
         color: white;
         text-align: center;
