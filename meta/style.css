@@ -3,7 +3,7 @@
 
 body {
 	/*background: url("../media/starburst.png");*/
-	background: url("../media/undefbars.png");
+	background: url("../media/undefbars_dark.png");
 	background-size: 30%;
 	background-repeat: repeat;
 	background-attachment: fixed;
@@ -19,24 +19,42 @@ h1, h2 {
 }
 
 .body-box {
-	margin: 2% 0%;
+	margin: 1% 0%;
 	background-color: rgba(255, 255, 255, 1);
 	padding: 2%;
 	border: 1px solid rgb(200, 200, 200);
 	/*border-radius: 2px;*/
 	/*box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);*/
+	overflow: hidden;
+}
+
+.body-box img {
+        margin: 2%;
+}
+
+.body-box-wide {
+	clear: both;
+}
+
+.body-box-columnn {
+        display: table;
+}
+
+.column-box {
+        display: table-cell;
+        width: 10%;
 }
 
 .content-box
 {
         margin: 2% 5%;
         padding: 5%;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.95);
 	border: 1px solid rgb(200,200,200);
 	border-radius: 2px;
 	box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2),
 	        -0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2);
-        
+        overflow: hidden;
 }
 
 .body-box-clear {

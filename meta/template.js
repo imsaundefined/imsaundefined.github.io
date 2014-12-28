@@ -13,14 +13,14 @@ $( document ).ready( function(){
 	
 	//Build page from xml data
 	//Load the xml file using ajax 
-        $.get("main.xml", function (xml) {
+        $.get("auto.xml", function (xml) {
                 console.log("Success");
                 // Parse the xml file and get data
                 var xmlDoc = $.parseXML(xml), $xml = $(xmlDoc);
                 var calendarthere = false;
                 $(xml).children("body").children("section").each(function () {
                         console.log("hey");
-                        htmlstring+="<div class=\"body-box\">";
+                        htmlstring+="<div class=\"body-box body-box-wide\">";
                         if($(this).children("title").text()!="")
                         {
                                 htmlstring+="<h1>"+$(this).children("title").text()+"</h1>";
@@ -79,7 +79,7 @@ $( document ).ready( function(){
 		        }*/
                         htmlstring+="</div>";
                 });
-		$("#main-body").append(htmlstring);
+		$("#auto-body").append(htmlstring);
 		if(calendarthere)
 		{
 		        getPreferredCalendars(document.getElementById("calform"));

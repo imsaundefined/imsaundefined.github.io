@@ -13,7 +13,7 @@ $( document ).ready( function(){
 	
 	//Build page from xml data
 	//Load the xml file using ajax 
-        $.get("main.xml", function (xml) {
+        /*$.get("main.xml", function (xml) {
                 console.log("Success");
                 // Parse the xml file and get data
                 var xmlDoc = $.parseXML(xml), $xml = $(xmlDoc);
@@ -76,7 +76,7 @@ $( document ).ready( function(){
 			                $.getScript(element);
 			                console.log("Got "+element);
 			        });
-		        }*/
+		        }
                         htmlstring+="</div>";
                 });
 		$("#main-body").append(htmlstring);
@@ -87,107 +87,7 @@ $( document ).ready( function(){
 		$("iframe").load(function(){
 		        $(this).animate({"height": bestFrameHeight*0.8});
 		});
-        }, "xml");
+        }, "xml");*/
 		
 	$(".footer").append("<footer><p><a href=\"/\"><img class=\"footer-logo\" src=\"/media/IMSA_Undefined_Logo_White.png\" alt=\"IMSA Undefined\"></a>&nbsp;&nbsp;&nbsp;Copyright &copy; IMSA Undefined 2014</p></footer>");
 });
-
-function getPreferredCalendars(form)
-{
-        if(cal_array.length > 1)
-        {
-                var boxes = form.calendar, found = false;
-                if(getCookie("calendars")!="")
-                {
-                        console.log("bong");
-                        var calendars = getCookie("calendars");
-                        calendars = calendars.split(",");
-                        for(i=0; i<calendars.length; i++)
-                        {
-                                for(a=0; a<boxes.length; a++)
-                                {
-                                        if(boxes[a].value==calendars[i])
-                                        {
-                                                boxes[a].checked = true;
-                                                break;
-                                        }
-                                        
-                                }
-                        }
-                }
-                else
-                {
-                        console.log("bing");
-                        for(a=0; a<boxes.length; a++)
-                        {
-                                boxes[a].checked = true;
-                        }
-                }
-                updatePreferredCalendars(form)
-        }
-}
-
-function toggleCalendars(form)
-{
-        var calendars = form.calendar;
-        for(i=0; i<calendars.length; i++)
-        {
-                calendars[i].checked = true;
-        }
-}
-
-function updatePreferredCalendars(form)
-{
-        //console.log(form.calendar);
-        var calendars = form.calendar, preferred = "", names = [];
-        var empty = true;
-        //console.log(preferred);
-        for(i=0; i<calendars.length; i++)
-        {
-                if(calendars[i].checked)
-                {
-
-                        var index = calnames_array.indexOf(calendars[i].value);
-                        if(index!=-1)
-                        {
-                                preferred+=cal_array[index];
-                                names.push(calnames_array[index]);
-                                empty = false;
-                        }
-                }
-        }          
-        if(empty)
-        {
-                cal_array.forEach(function(element){
-                        preferred+=element;
-                });
-        }
-        console.log("https://www.google.com/calendar/embed?mode=WEEK&showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+preferred+"ctz=America%2FChicago");
-        $("#gcal").attr("src", "https://www.google.com/calendar/embed?mode=WEEK&;showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+preferred+"ctz=America%2FChicago");
-        
-        setCookie("calendars", names.toString(), 20*365);
-}
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
-    }
-    return "";
-}
-
-function isMyStuffScrolling(object) {
-  var docHeight = $(object).scrollHeight();
-  var scroll    = $(window).height() + $(window).scrollTop();
-  return (docHeight == scroll);
-}
