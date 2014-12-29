@@ -14,12 +14,12 @@ $( document ).ready( function(){
 	//Build page from xml data
 	//Load the xml file using ajax 
         /*$.get("main.xml", function (xml) {
-                console.log("Success");
+                //console.log("Success");
                 // Parse the xml file and get data
                 var xmlDoc = $.parseXML(xml), $xml = $(xmlDoc);
                 var calendarthere = false;
                 $(xml).children("body").children("section").each(function () {
-                        console.log("hey");
+                        //console.log("hey");
                         htmlstring+="<div class=\"body-box\">";
                         if($(this).children("title").text()!="")
                         {
@@ -50,7 +50,7 @@ $( document ).ready( function(){
 				        cal_array.forEach(function(element){
 				                calendars+=element;
 				        });
-					console.log(calendars);
+					//console.log(calendars);
 					htmlstring+="<iframe id=\"gcal\" src=\"https://www.google.com/calendar/embed?mode=WEEK&showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+calendars+"ctz=America%2FChicago\" style=\" border-width:0 \" width=\"1920\" height=\"1080\" frameborder=\"0\" scrolling=\"no\"></iframe>";
 					htmlstring+="</div>";
 					if(cal_array.length > 1)
@@ -74,7 +74,7 @@ $( document ).ready( function(){
 			        var $template = template;
 			        $(template).each(function(index, element){
 			                $.getScript(element);
-			                console.log("Got "+element);
+			                //console.log("Got "+element);
 			        });
 		        }
                         htmlstring+="</div>";

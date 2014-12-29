@@ -213,7 +213,9 @@ div
 
 .fancybox-skin
 {
-        background-color: rgb(100,100,100) !important;
+        background-color: #FFFFFF !important;
+        border-radius: 2px !important;
+        color: black !important;
 }
 
 /*clearfix*/
@@ -226,7 +228,7 @@ div
 .fancybox-title {
         float: right;
         width: 45% !important;
-        padding: 0 !important;
+        padding: 2% !important;
 }
 
 .fancybox-title iframe

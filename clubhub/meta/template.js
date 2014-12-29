@@ -14,7 +14,7 @@ $( document ).ready( function(){
 	
 	$("#main-menu").load("/clubhub/meta/main-menu.html", function(data){
 	        $(".menu").find("li").each(function(index){
-	                console.log(this.innerText);      
+	                //console.log(this.innerText);      
                         $(this).css("background-color", "#"+colortabs[index%4]);
 	        });
 			 $(".divider-tab").css({"background-color": "none"});
@@ -30,13 +30,13 @@ $( document ).ready( function(){
 	
 	//Build page from xml data
 	//Load the xml file using ajax 
-        $.get("main.xml", function (xml) {
-                console.log("Success");
+        $.get("auto.xml", function (xml) {
+                //console.log("Success");
                 // Parse the xml file and get data
                 var xmlDoc = $.parseXML(xml), $xml = $(xmlDoc);
                 var calendarthere = false;
                 $(xml).children("body").children("section").each(function () {
-                        console.log("hey");
+                        //console.log("hey");
                         htmlstring+="<div class=\"body-box\">";
                         if($(this).children("title").text()!="")
                         {
@@ -67,7 +67,7 @@ $( document ).ready( function(){
 				        cal_array.forEach(function(element){
 				                calendars+=element;
 				        });
-					console.log(calendars);
+					//console.log(calendars);
 					htmlstring+="<iframe id=\"gcal\" src=\"https://www.google.com/calendar/embed?mode=WEEK&showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+calendars+"ctz=America%2FChicago\" style=\" border-width:0 \" width=\"1920\" height=\"1080\" frameborder=\"0\" scrolling=\"no\"></iframe>";
 					htmlstring+="</div>";
 					if(cal_array.length > 1)
@@ -85,7 +85,7 @@ $( document ).ready( function(){
 			}
                         htmlstring+="</div>";
                 });
-		$("#main-body").append(htmlstring);
+		$("#auto-body").append(htmlstring);
 		if(calendarthere)
 		{
 		        getPreferredCalendars(document.getElementById("calform"));
@@ -105,7 +105,7 @@ function getPreferredCalendars(form)
                 var boxes = form.calendar, found = false;
                 if(getCookie("calendars")!="")
                 {
-                        console.log("bong");
+                        //console.log("bong");
                         var calendars = getCookie("calendars");
                         calendars = calendars.split(",");
                         for(i=0; i<calendars.length; i++)
@@ -123,7 +123,7 @@ function getPreferredCalendars(form)
                 }
                 else
                 {
-                        console.log("bing");
+                        //console.log("bing");
                         for(a=0; a<boxes.length; a++)
                         {
                                 boxes[a].checked = true;
@@ -144,10 +144,10 @@ function toggleCalendars(form)
 
 function updatePreferredCalendars(form)
 {
-        //console.log(form.calendar);
+        ////console.log(form.calendar);
         var calendars = form.calendar, preferred = "", names = [];
         var empty = true;
-        //console.log(preferred);
+        ////console.log(preferred);
         for(i=0; i<calendars.length; i++)
         {
                 if(calendars[i].checked)
@@ -168,7 +168,7 @@ function updatePreferredCalendars(form)
                         preferred+=element;
                 });
         }
-        console.log("https://www.google.com/calendar/embed?mode=WEEK&showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+preferred+"ctz=America%2FChicago");
+        //console.log("https://www.google.com/calendar/embed?mode=WEEK&showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+preferred+"ctz=America%2FChicago");
         $("#gcal").attr("src", "https://www.google.com/calendar/embed?mode=WEEK&;showTitle=0&height=1080&wkst=1&bgcolor=%23FFFFFF&"+preferred+"ctz=America%2FChicago");
         
         setCookie("calendars", names.toString(), 20*365);
