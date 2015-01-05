@@ -114,6 +114,15 @@
                                 }
                         }
                         
+                        function sortPostersByDate(PosterArray1, PosterArray2)
+                        {
+                                
+                                dateArray1 = [PosterArray1[5], PosterArray1[4], PosterArray1[3]];
+                                dateArray2 = [PosterArray2[5], PosterArray2[4], PosterArray2[3]];
+                                
+                                return(sortByDate(dateArray1, dateArray2));
+                        }
+                        
                         var PosterSpreadsheetKey = "1MwsGs0Gk8kV7MouZ5IsolOZZd-aVDJwK-RNfYxj8cZ8";
                         var PosterFolderKey = "0B_vROCev3947Qy1kN3Z2RUxOUU0";
                         //console.log("HEY");
@@ -156,6 +165,8 @@
                                         
                                 });
                                 
+                                //Sort posters in chronological order
+                                ToBePosted.sort(sortPostersByDate);
                                 //console.log(ToBePosted);
                                 
                                 $(ToBePosted).each(function(index){
@@ -244,6 +255,7 @@
                                         </div>
                                 </div>
                                 <div class="protip"><p>Protip: <a href="https://sites.google.com/site/postedservice/">Click here</a> to get your poster hosted on Club Hub.</p></div>
+                                <div class="protip"><p>How are we doing? <a href="https://docs.google.com/forms/d/1HMsf5ahCQivuczPrtqGjojj3NmZ8xxtKTNpNFz5J614/viewform?usp=send_form">Feedback Form (for Clubs)</a><p></div>
 			</div>
 			<div class="footer"></div>
 		</div>
