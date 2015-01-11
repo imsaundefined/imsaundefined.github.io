@@ -35,7 +35,7 @@ h1, h2
 	/*background-color: rgba(255, 255, 255,1);*/
 	background-image: url("/clubhub/media/paper.jpg");
 	background-size: auto 100%;
-	padding: 2%;
+	padding: 1% 2%;
 	border: 1px solid rgb(200,200,200);
 	box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3),
 	        -0.2em 0.2em 0.2em rgba(0,0,0,0.3);
@@ -98,7 +98,7 @@ footer
 {
 	vertical-align: middle;
 	padding-right: 2%;
-	border-right: 1px solid white;
+	/*border-right: 2px solid rgb(220,220,220);*/
 }
 
 .branding-box h1
