@@ -4,14 +4,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100);
 
-body, html
+/*body, html
 {
 	height: 100%;
 }
 
 body 
 {
-	background-color: white;
+	background-image: /clubhub/media/background.jpg;
+	background-size: 100%;
 	font-family: 'Roboto', serif;
 	margin: 0;
 	padding: 0;
@@ -22,7 +23,7 @@ div
 {
         margin: 0;
         padding: 0;
-}
+}*/
 
 .wall
 {
@@ -45,13 +46,14 @@ div
         margin: 0px;
         padding: 0px;
         float: right;
-	background-color: white;
+	/*background-color: white;*/
+	background-color: none;
 	position: relative;
 	z-index: 0;
-	box-sizing:border-box;
+	/*box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
-	border: 1px solid rgba(0,0,0,0.6);
+	border: 1px solid rgba(0,0,0,0.6);*/
 }
 
 .mitem img:hover
@@ -62,10 +64,11 @@ div
 
 .mitem
 {
-        width: 20%;
+        max-width: 20%;
         float: left;
 	position: relative;
-	background-color: white;
+	/*background-color: white;*/
+	background-color: none;
 }
 
 .mitem h1
@@ -78,12 +81,12 @@ div
 
 .mitem.large
 {
-        width: 40%;
+        max-width: 40%;
 }
 
 .mitem.medium
 {
-        width: 20%;
+        max-width: 20%;
 }
 
 .verybigtitle

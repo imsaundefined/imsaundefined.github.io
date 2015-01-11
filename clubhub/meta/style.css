@@ -9,10 +9,10 @@ body, html
 
 body 
 {
-	background-size: 150%;
+        background-size: 100%;
 	background-repeat: repeat;
 	background-attachment: fixed;
-	background-color: white;
+	background-image: url("/clubhub/media/chalk.jpg");
 	font-family: 'Roboto', serif;
 	margin: 0%;
 	padding: 0%;
@@ -32,7 +32,9 @@ h1, h2
 .body-box 
 {
 	margin: 0% 5% 5% 5%;
-	background-color: rgba(255, 255, 255,1);
+	/*background-color: rgba(255, 255, 255,1);*/
+	background-image: url("/clubhub/media/paper.jpg");
+	background-size: auto 100%;
 	padding: 2%;
 	border: 1px solid rgb(200,200,200);
 	box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3),
@@ -68,8 +70,11 @@ h1, h2
 {
         clear: both;
         background-color: black;
+        /*background-image: url("/clubhub/media/chalk.jpg");*/
         margin-top: 5%;
         padding: 2% 12%;
+        box-shadow: 0.2em -0.2em 0.2em rgba(0,0,0,0.2);
+        
 }
 
 img.footer-logo {
@@ -101,13 +106,13 @@ footer
 	font-family: "Roboto", sans-serif;
 	font-size: 2em;
 	font-weight: 300;
-	color: rgb(100,100,100);
+	color: rgb(220,220,220);
 	vertical-align: middle;
 	padding-left: 2%;
 	display: inline-block;
 	position: relative;
-	left: -10%;
-	opacity: 0;
+	/*left: -10%;*/
+	opacity: 1;
 }
 
 #club-logo 
