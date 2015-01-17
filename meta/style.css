@@ -1,15 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-	/*background: url("../media/starburst.png");*/
-	background: url("../media/undefbars_dark.png");
+	background: url("../media/carbon_tile.png");
+	/*background: url("../media/undefbars_dark.png");*/
 	background-size: 30%;
 	background-repeat: repeat;
 	background-attachment: fixed;
 	/*background-color: rgb(50, 120, 224);*/
 	background-color: white;
 	font-family: 'Roboto', serif;
+	font-size: 1.05em;
+	font-weight: 300;
 	margin: 0%;
 	padding: 0%;
 }
@@ -48,7 +50,7 @@ h1, h2 {
 .content-box
 {
         margin: 2% 5%;
-        padding: 5%;
+        padding: 2%;
 	background-color: rgba(255, 255, 255, 0.95);
 	border: 1px solid rgb(200,200,200);
 	border-radius: 2px;
@@ -72,17 +74,24 @@ h1, h2 {
 
 .branding-box {
 	margin: 0;
+	overflow: hidden;
 }
 
 #undefined-logo {	
-	width: 50%;
+	/*width: 100%;*/
+	max-width: 100%;
+	min-width: 800px;
 	height: auto;
+        position: relative;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+
 }
 
 img.footer-logo {
         width: 5%;
         height: auto;
-        vertical-align: bottom;
+        vertical-align: middle;
 }
 
 footer {
