@@ -50,13 +50,6 @@
                                 _gaq.push(["_trackEvent", "Mobile-Browser", "Mobile", "mobile"]);
                                 //$("#bigthingstyle").attr("href", "/clubhub/meta/bigthingmobile.css");
                         }
-                        
-                        $(function() {
-                                $('#isowall').isotope({
-                                        itemSelector: '.mitem',
-                                        layoutMode: 'packery'
-                                });                       
-                        });  
                         $( document ).ready(function(){                     
                             	//What's the Next Big Thing at IMSA? Animation
                             	//$(".branding-box h1").animate({"left": 0, "opacity": 1}, 3000);
@@ -170,7 +163,7 @@
                                                 
                                                 var sizes = ["small", "medium", "large"];
                                                 function getSizeLayout(index){
-                                                        var size_layout = [2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0];
+                                                        var size_layout = [2, 2, 2, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 1];
                                                         if(index < size_layout.length)
                                                         {
                                                                 return size_layout[index];
@@ -202,6 +195,8 @@
                                                 });
                                         });
                                         
+                                        updateIsowall();
+                                        
                                 });
                                 
                                 $(".fancybox").fancybox({
@@ -231,6 +226,15 @@
                                 });
                                 
                         });     
+                </script>
+                <script>
+                        function updateIsowall() {
+                          
+                                $('.isotope').isotope({
+                                        itemSelector: '.mitem',
+                                        layoutMode: 'packery'
+                                });
+                        }
                 </script>
 	</head>
 	<body>
