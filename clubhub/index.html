@@ -52,6 +52,19 @@
                         }*/
                 </script>
                 <script>
+                        (function() {
+                                var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+                                var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+                                Date.prototype.getMonthName = function() {
+                                        return months[ this.getMonth() ];
+                                };
+                                Date.prototype.getDayName = function() {
+                                        return days[ this.getDay() ];
+                                };
+                        })();
+                
                         $( document ).ready(function(){                     
                             	//What's the Next Big Thing at IMSA? Animation
                             	//$(".branding-box h1").animate({"left": 0, "opacity": 1}, 3000);
@@ -172,7 +185,8 @@
                                         $(ToBePosted).each(function(index){
                                                 if([ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]] != lastdate)
                                                 {
-                                                        $("#isowall").append("<div id=\"datetip"+index+"\" class=\"mitem sorttip datetip\" data-date=\""+ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]+"\" data-precedence=\"a\"><p>"+ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]+"<p></div>");
+                                                        var namedate = new Date(ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]);
+                                                        $("#isowall").append("<div id=\"datetip"+index+"\" class=\"mitem sorttip datetip\" data-date=\""+ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]+"\" data-precedence=\"a\"><p>"+namedate.getDayName()+", "+namedate.getMonthName()+" "+namedate.getDate()+", "+namedate.getFullYear()+"<p></div>");
                                                         lastdate = [ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]]
                                                 }
                                                 
@@ -284,27 +298,31 @@
                                         $('.isotope').isotope('updateSortData').isotope();
 
                                         var sortValue = $(this).attr('data-sort-value');
-                                        if(sortValue == "priority")
+                                        if(sortValue == "quick")
                                         {
-                                                console.log("HOI!");
                                                 $(".isotope").isotope({ filter: ':not(.sorttip)' });
                                                 $(".isotope").isotope({ layoutMode: 'packery' });
                                                 $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
                                         }
                                         else if(sortValue == "date")
                                         {
-                                                console.log("HAI!");
                                                 $(".isotope").isotope({ filter: '*:not(.sorttip:not(.datetip))' });
                                                 $(".isotope").isotope({ layoutMode: 'masonry' });
                                                 $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
                                         }
                                         else if(sortValue == "clubs")
                                         {
-                                                console.log("OH!");
                                                 $(".isotope").isotope({ filter: '*:not(.sorttip:not(.clubtip))' });
                                                 $(".isotope").isotope({ layoutMode: 'masonry' });
                                                 $(".isotope").isotope({ sortBy: ['clubs', 'precedence'] });
                                         }
+                                        else
+                                        {
+                                                $(".isotope").isotope({ filter: ':not(.sorttip)' });
+                                                $(".isotope").isotope({ layoutMode: 'packery' });
+                                                $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
+                                        }
+                                        _gaq.push(["_trackEvent", "View-Select", "Selection", "View "+sortValue]);
                                 });
                                 
                                 $('.button-group').each( function( i, buttonGroup ) {
@@ -349,7 +367,7 @@
 			<div class="body-box">
 			        <div class="protip"><p>Protip: Click on a poster for more information.</p></div>
 			        <div id="sorts" class="button-group">
-                                        <button class="button is-checked" data-sort-value="priority">Priority View</button>
+                                        <button class="button is-checked" data-sort-value="quick">Quick View</button>
                                         <button class="button" data-sort-value="date">Date View</button>
                                         <button class="button" data-sort-value="clubs">Club View</button>
                                 </div>
@@ -362,7 +380,7 @@
                                 </div>
                                 <div class="protip"><p>Protip: <a href="http://imsaundefined.org/clubhub/submit">Click here</a> to get your poster hosted on Club Hub.</p></div>
                                 <div class="protip" style="background-color: rgb(0, 182, 57)"><p>How are we doing? <a href="https://docs.google.com/forms/d/1HMsf5ahCQivuczPrtqGjojj3NmZ8xxtKTNpNFz5J614/viewform?usp=send_form">Feedback Form (for Clubs)</a> <a href="https://docs.google.com/forms/d/10h9SFEC7zsQv_teze6dOfSI168qGP8z4Ef3oLrz6Z6Q/viewform?usp=send_form">Feedback Form (for Students)</a><p></div>
-                                <div class="protip" style="background-color: rgba(0,0,0,0)"><p><a href="/" style="color: blue">imsa#undefined</a></p></div>
+                                <div class="protip" style="background-color: rgba(0,0,0,0)"><p style="color: black">Club Hub version 2.01 - <a href="/" style="color: blue">imsa#undefined</a></p></div>
 			</div>
 			<div class="footer"></div>
 		</div>

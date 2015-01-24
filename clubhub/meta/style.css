@@ -88,6 +88,11 @@ h1, h2
         font-weight: normal;
 }
 
+.clubtip
+{
+        border-bottom: 3px solid rgba(255, 42, 42, 0.3);
+}
+
 .footer 
 {
         clear: both;
