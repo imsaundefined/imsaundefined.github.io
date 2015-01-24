@@ -82,27 +82,22 @@ div
 
 .mitem.mitem-small
 {
-        width: 160px;
+        width: 150px;
+}
+
+.mitem.mitem-small-wide
+{
+        height: 150px;
+}
+
+.mitem.mitem-small-very-wide
+{
+        width: 320px;
 }
 
 .mitem.mitem-medium
 {
         width: 240px;
-}
-
-.mitem.mitem-large
-{
-        width: 320px;
-}
-
-.mitem.mitem-large-wide
-{
-        height: 320px;
-}
-
-.mitem.mitem-large-very-wide
-{
-        width: 660px;
 }
 
 .mitem.mitem-medium-wide
@@ -115,14 +110,19 @@ div
         width: 500px;
 }
 
-.mitem.mitem-small-wide
+.mitem.mitem-large
 {
-        height: 160px;
+        width: 300px;
 }
 
-.mitem.mitem-small-very-wide
+.mitem.mitem-large-wide
 {
-        width: 340px;
+        height: 300px;
+}
+
+.mitem.mitem-large-very-wide
+{
+        width: 620px;
 }
 
 /*==========================END MITEM STYLING============================*/
