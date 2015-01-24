@@ -38,6 +38,8 @@ div
 	clear: both;
 }
 
+/*========================MITEM STYLING==============================*/
+
 .mitem img
 {
         max-width: 100%;
@@ -64,8 +66,6 @@ div
 
 .mitem
 {
-        width: 160px;
-        height: 160px;
         float: left;
 	/*position: relative;*/
 	/*background-color: white;*/
@@ -80,17 +80,52 @@ div
 	z-index: 3;
 }
 
-.mitem.large
+.mitem.mitem-small
+{
+        width: 160px;
+}
+
+.mitem.mitem-medium
+{
+        width: 240px;
+}
+
+.mitem.mitem-large
 {
         width: 320px;
+}
+
+.mitem.mitem-large-wide
+{
         height: 320px;
 }
 
-.mitem.medium
+.mitem.mitem-large-very-wide
 {
-        max-width: 240px;
-        max-height: 240px;
+        width: 660px;
 }
+
+.mitem.mitem-medium-wide
+{
+        height: 240px;
+}
+
+.mitem.mitem-medium-very-wide
+{
+        width: 500px;
+}
+
+.mitem.mitem-small-wide
+{
+        height: 160px;
+}
+
+.mitem.mitem-small-very-wide
+{
+        width: 340px;
+}
+
+/*==========================END MITEM STYLING============================*/
 
 .isotope:after {
   content: '';
