@@ -57,7 +57,7 @@
                             	//$(".branding-box h1").animate({"left": 0, "opacity": 1}, 3000);
 
                                 //Smooth scrolling sections
-                                $(function() {
+                                /*$(function() {
                                         $('a[href*=#]:not([href=#])').click(function() {
                                                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                                                         var target = $(this.hash);
@@ -70,7 +70,7 @@
                                                         }
                                                 }
                                         });
-                                });
+                                });*/
                                 
                                 function sortByDate(dateArray1, dateArray2)
                                 {
@@ -115,6 +115,12 @@
                                         return(sortByDate(dateArray1, dateArray2));
                                 }
                                 
+                                function pad(n, width, z) {
+                                        z = z || '0';
+                                        n = n + '';
+                                        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+                                }
+                                
                                 var PosterSpreadsheetKey = "1MwsGs0Gk8kV7MouZ5IsolOZZd-aVDJwK-RNfYxj8cZ8";
                                 var PosterFolderKey = "0B_vROCev3947Qy1kN3Z2RUxOUU0";
                                 //console.log("HEY");
@@ -137,8 +143,8 @@
                                                 var PosterApproved = posters[index].gsx$approved.$t;
                                                 
                                                 var splitdate = PosterDate.split("/");
-                                                var PosterDateMonth = splitdate[0];
-                                                var PosterDateDay = splitdate[1];
+                                                var PosterDateMonth = pad(splitdate[0], 2);
+                                                var PosterDateDay = pad(splitdate[1], 2);
                                                 var PosterDateYear = splitdate[2];
                                                 
                                                 //console.log(ClubName);
@@ -158,8 +164,24 @@
                                         });
                                         
                                         //Sort posters in chronological order
-                                        ToBePosted.sort(sortPostersByDate);
+                                        //ToBePosted.sort(sortPostersByDate);
                                         //console.log(ToBePosted);
+                                        
+                                        var lastdate = ["0","0","0"]
+                                        var lastclub = ""
+                                        $(ToBePosted).each(function(index){
+                                                if([ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]] != lastdate)
+                                                {
+                                                        $("#isowall").append("<div id=\"datetip"+index+"\" class=\"mitem sorttip datetip\" data-date=\""+ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]+"\" data-precedence=\"a\"><p>"+ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]+"<p></div>");
+                                                        lastdate = [ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]]
+                                                }
+                                                
+                                                if(ToBePosted[index][1] != lastclub)
+                                                {
+                                                        $("#isowall").append("<div id=\"clubtip"+index+"\" class=\"mitem sorttip clubtip\" data-club=\""+ToBePosted[index][0]+"\"  data-precedence=\"a\"><p>"+ToBePosted[index][0]+"<p></div>");
+                                                        lastclub = ToBePosted[index][0];
+                                                }
+                                        });
                                         
                                         $(ToBePosted).each(function(index){
                                                 
@@ -182,9 +204,8 @@
                                                         return '<a href="' + url + '">' + url + '</a>';
                                                     })
                                                 }
-                                                
-                                                
-                                                $("#isowall").append("<div id=\"isopost"+index+"\" class=\"mitem\" value=\""+index+"\"><a class=\"fancybox\" rel=\"gallery1\" href=\"\"><img src=\"\"></a></div>");
+
+                                                $("#isowall").append("<div id=\"isopost"+index+"\" class=\"mitem\" value=\""+index+"\" data-date=\""+ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]+"\" data-club=\""+ToBePosted[index][0]+"\" data-precedence=\"b\"><a class=\"fancybox\" rel=\"gallery1\" href=\"\"><img src=\"\"></a></div>");
 
                                                 var thisid = "#isopost"+index;
                                                 
@@ -204,8 +225,6 @@
                                                         var posterratio = $(thisid).children("a").children("img").width()/$(thisid).children("a").children("img").height();
                                                         if(posterratio > 1)
                                                         {
-                                                                //These three values correspond with mitem. SYNCHRONIZE ACCORDIGLY!
-                                                                var posterlength = [160, 240, 320][getSizeLayout(index)];
                                                                 if(posterratio > 2)
                                                                 {
                                                                         $(thisid).addClass(sizes[getSizeLayout(index)]+"-very-wide");
@@ -229,7 +248,7 @@
                                                 
                                                 $(thisid).children("a").click(function(){
                                                         //console.log(value);
-                                                        _gaq.push(["_trackEvent", "ClubBox-Click", "Click", "PosterID "+ToBePosted[index][6]]);
+                                                        _gaq.push(["_trackEvent", "ClubBox-Click", "Click", "PosterID "+ToBePosted[index][6]]+"("+ToBePosted[index][6]+")");
                                                 });
                                         });
 
@@ -261,6 +280,41 @@
                                         $(this).width("2%");
                                 });
                                 
+                                $('.button').click(function() {
+                                        $('.isotope').isotope('updateSortData').isotope();
+
+                                        var sortValue = $(this).attr('data-sort-value');
+                                        if(sortValue == "priority")
+                                        {
+                                                console.log("HOI!");
+                                                $(".isotope").isotope({ filter: ':not(.sorttip)' });
+                                                $(".isotope").isotope({ layoutMode: 'packery' });
+                                                $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
+                                        }
+                                        else if(sortValue == "date")
+                                        {
+                                                console.log("HAI!");
+                                                $(".isotope").isotope({ filter: '*:not(.sorttip:not(.datetip))' });
+                                                $(".isotope").isotope({ layoutMode: 'masonry' });
+                                                $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
+                                        }
+                                        else if(sortValue == "clubs")
+                                        {
+                                                console.log("OH!");
+                                                $(".isotope").isotope({ filter: '*:not(.sorttip:not(.clubtip))' });
+                                                $(".isotope").isotope({ layoutMode: 'masonry' });
+                                                $(".isotope").isotope({ sortBy: ['clubs', 'precedence'] });
+                                        }
+                                });
+                                
+                                $('.button-group').each( function( i, buttonGroup ) {
+                                        var $buttonGroup = $( buttonGroup );
+                                        $buttonGroup.on( 'click', 'button', function() {
+                                                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                                                $( this ).addClass('is-checked');
+                                        });
+                                });
+                                
                         });     
                 </script>
                 <script>
@@ -268,6 +322,13 @@
                           
                                 $('.isotope').isotope({
                                         itemSelector: '.mitem',
+                                        getSortData: {
+                                                date: '[data-date]',
+                                                clubs: '[data-club]',
+                                                precedence: '[data-precedence]',
+                                        },
+                                        sortBy : ['date', 'precedence'],
+                                        filter: ':not(.sorttip)',
                                         layoutMode: 'packery',
                                         packery: {
                                                 gutter: 20
@@ -287,7 +348,12 @@
 		<div id="main-body">
 			<div class="body-box">
 			        <div class="protip"><p>Protip: Click on a poster for more information.</p></div>
-				<div class="wall">
+			        <div id="sorts" class="button-group">
+                                        <button class="button is-checked" data-sort-value="priority">Priority View</button>
+                                        <button class="button" data-sort-value="date">Date View</button>
+                                        <button class="button" data-sort-value="clubs">Club View</button>
+                                </div>
+                                <div class="wall">
                                         <div id="isowall" class="isotope">
                                                 <!--<div id="isowall1" class="mitem large" value="1">
                                                         <a class="fancybox" rel="gallery1" href=""><img src=""></a>
