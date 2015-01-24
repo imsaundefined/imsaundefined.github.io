@@ -176,6 +176,13 @@
                                                         }
                                                 }
                                                 
+                                                function urlify(text) {
+                                                    var urlRegex = /(https?:\/\/[^\s]+)/g;
+                                                    return text.replace(urlRegex, function(url) {
+                                                        return '<a href="' + url + '">' + url + '</a>';
+                                                    })
+                                                }
+                                                
                                                 
                                                 $("#isowall").append("<div id=\"isopost"+index+"\" class=\"mitem\" value=\""+index+"\"><a class=\"fancybox\" rel=\"gallery1\" href=\"\"><img src=\"\"></a></div>");
 
@@ -183,7 +190,7 @@
                                                 
                                                 $(thisid).children("a").attr("href", "https://googledrive.com/host/"+PosterFolderKey+"/"+ToBePosted[index][6]);
                                                 $(thisid).children("a").attr("title", "Click for more info.");
-                                                $(thisid).children("a").attr("caption", "<h1>"+ToBePosted[index][1]+"</h1>"+ToBePosted[index][2]+" ("+ToBePosted[index][0]+", "+ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]+")");
+                                                $(thisid).children("a").attr("caption", "<h1>"+ToBePosted[index][1]+"</h1>"+urlify(ToBePosted[index][2])+" ("+ToBePosted[index][0]+", "+ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]+")");
                                                 $(thisid).children("a").children("img").attr("src", "https://googledrive.com/host/"+PosterFolderKey+"/"+ToBePosted[index][6]);
                                                 $(thisid).children("a").children("img").attr("alt", "The Next Big Thing");
                                                 $(thisid).children("a").children("img").error(function(){
