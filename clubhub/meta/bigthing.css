@@ -325,3 +325,11 @@ footer
 {
         color: rgb(200,60,60);
 }
+
+.remindme
+{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+}
+}
