@@ -352,5 +352,25 @@ hr
 .button-group
 {
         margin: 0% 0% 2% 0%;
+        display: inline-block;
+}
+
+.buttonbar
+{
+        width: 100%;
+}
+
+#imsaundefined-link
+{
+        background: rgb(256, 100, 0);
+        border: 1px solid rgb(256, 200, 100);
+        color: white;
+        display: inline-block;
+        float: right;
+}
+
+#imsaundefined-link:hover
+{
+        background: rgb(256, 160, 100);
 }
 

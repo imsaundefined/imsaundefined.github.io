@@ -177,23 +177,23 @@
                                         });
                                         
                                         //Sort posters in chronological order
-                                        //ToBePosted.sort(sortPostersByDate);
+                                        ToBePosted.sort(sortPostersByDate);
                                         //console.log(ToBePosted);
                                         
-                                        var lastdate = ["0","0","0"]
-                                        var lastclub = ""
+                                        var datelist = [];
+                                        var clublist = [];
                                         $(ToBePosted).each(function(index){
-                                                if([ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]] != lastdate)
+                                                if(datelist.indexOf(ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]) == -1)
                                                 {
                                                         var namedate = new Date(ToBePosted[index][4]+"/"+ToBePosted[index][5]+"/"+ToBePosted[index][3]);
                                                         $("#isowall").append("<div id=\"datetip"+index+"\" class=\"mitem sorttip datetip\" data-date=\""+ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]+"\" data-precedence=\"a\"><p>"+namedate.getDayName()+", "+namedate.getMonthName()+" "+namedate.getDate()+", "+namedate.getFullYear()+"<p></div>");
-                                                        lastdate = [ToBePosted[index][3], ToBePosted[index][4], ToBePosted[index][5]]
+                                                        datelist.push(ToBePosted[index][3]+ToBePosted[index][4]+ToBePosted[index][5]);
                                                 }
                                                 
-                                                if(ToBePosted[index][1] != lastclub)
+                                                if(clublist.indexOf(ToBePosted[index][0]) == -1)
                                                 {
                                                         $("#isowall").append("<div id=\"clubtip"+index+"\" class=\"mitem sorttip clubtip\" data-club=\""+ToBePosted[index][0]+"\"  data-precedence=\"a\"><p>"+ToBePosted[index][0]+"<p></div>");
-                                                        lastclub = ToBePosted[index][0];
+                                                        clublist.push(ToBePosted[index][0]);
                                                 }
                                         });
                                         
@@ -299,30 +299,37 @@
                                         $(this).width("2%");
                                 });
                                 
-                                $('.button').click(function() {
+                                $('.viewtoggle').click(function() {
                                         $('.isotope').isotope('updateSortData').isotope();
 
                                         var sortValue = $(this).attr('data-sort-value');
                                         if(sortValue == "quick")
                                         {
+                                                $(".mitem").css("margin", "0px");
                                                 $(".isotope").isotope({ filter: ':not(.sorttip)' });
                                                 $(".isotope").isotope({ layoutMode: 'packery' });
                                                 $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
+                                                
                                         }
                                         else if(sortValue == "date")
                                         {
+                                                $(".mitem").css("margin", "20px");
                                                 $(".isotope").isotope({ filter: '*:not(.sorttip:not(.datetip))' });
-                                                $(".isotope").isotope({ layoutMode: 'masonry' });
+                                                $(".isotope").isotope({ layoutMode: 'fitRows' });
                                                 $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
+                                                
                                         }
                                         else if(sortValue == "clubs")
                                         {
+                                                $(".mitem").css("margin", "20px");
                                                 $(".isotope").isotope({ filter: '*:not(.sorttip:not(.clubtip))' });
-                                                $(".isotope").isotope({ layoutMode: 'masonry' });
+                                                $(".isotope").isotope({ layoutMode: 'fitRows' });
                                                 $(".isotope").isotope({ sortBy: ['clubs', 'precedence'] });
+                                                
                                         }
                                         else
                                         {
+                                                $(".mitem").css("margin", "0px");
                                                 $(".isotope").isotope({ filter: ':not(.sorttip)' });
                                                 $(".isotope").isotope({ layoutMode: 'packery' });
                                                 $(".isotope").isotope({ sortBy: ['date', 'precedence'] });
@@ -355,6 +362,9 @@
                                         layoutMode: 'packery',
                                         packery: {
                                                 gutter: 20
+                                        },
+                                        vertical: {
+                                                horizontalAlignment: 0.5
                                         }
                                 });
                         }
@@ -371,10 +381,13 @@
 		<div id="main-body">
 			<div class="body-box">
 			        <div class="protip"><p>Protip: Click on a poster for more information.</p></div>
-			        <div id="sorts" class="button-group">
-                                        <button class="button is-checked" data-sort-value="quick">Quick View</button>
-                                        <button class="button" data-sort-value="date">Date View</button>
-                                        <button class="button" data-sort-value="clubs">Club View</button>
+			        <div class="buttonbar">
+			                <div id="sorts" class="button-group">
+                                                <button class="button viewtoggle is-checked" data-sort-value="quick">Quick View</button>
+                                                <button class="button viewtoggle" data-sort-value="date">Date View</button>
+                                                <button class="button viewtoggle" data-sort-value="clubs">Club View</button>
+                                        </div>
+                                        <a href="/"><button class="button" id="imsaundefined-link">an imsa#undefined project</button></a>
                                 </div>
                                 <div class="wall">
                                         <div id="isowall" class="isotope">
@@ -385,7 +398,7 @@
                                 </div>
                                 <div class="protip"><p>Protip: <a href="http://imsaundefined.org/clubhub/submit">Click here</a> to get your poster hosted on Club Hub.</p></div>
                                 <div class="protip" style="background-color: rgb(0, 182, 57)"><p>How are we doing? <a href="https://docs.google.com/forms/d/1HMsf5ahCQivuczPrtqGjojj3NmZ8xxtKTNpNFz5J614/viewform?usp=send_form">Feedback Form (for Clubs)</a> <a href="https://docs.google.com/forms/d/10h9SFEC7zsQv_teze6dOfSI168qGP8z4Ef3oLrz6Z6Q/viewform?usp=send_form">Feedback Form (for Students)</a><p></div>
-                                <div class="protip" style="background-color: rgba(0,0,0,0)"><p style="color: black">Club Hub version 0.21 - <a href="/" style="color: blue">imsa#undefined</a></p></div>
+                                <div class="protip" style="background-color: rgba(0,0,0,0)"><p style="color: black">Club Hub version 0.3</p></div>
 			</div>
 			<div class="footer"></div>
 		</div>
