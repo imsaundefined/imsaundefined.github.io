@@ -125,6 +125,19 @@ div
         width: 620px;
 }
 
+.sorttip
+{
+        width: 90%;
+        margin: 0% 0% 2% 0%;
+        height: 3em;
+        border-bottom: 2px solid rgba(0,102,255, 0.3);
+}
+
+.sorttip p
+{
+        font-weight: normal;
+}
+
 /*==========================END MITEM STYLING============================*/
 
 .isotope:after {
@@ -332,4 +345,61 @@ footer
         right: 0;
         bottom: 0;
 }
+
+/*Sort bar stuff*/
+
+.sorts
+{
+        display: inline;
 }
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  background: white;
+  border: 1px solid rgb(0,80,200);
+  color: rgb(0,80,200);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(0,150,255, 0.5);
+  color: white;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: rgb(0,102,255);
+}
+
+.button.is-checked {
+  color: white;
+}
+
+.button-group
+{
+        margin: 0% 0% 2% 0%;
+        display: inline-block;
+}
+
+.buttonbar
+{
+        width: 100%;
+}
+
+#imsaundefined-link
+{
+        background: white;
+        border: 1px solid rgb(256, 100, 0);
+        color: rgb(256, 100, 0);
+        display: inline-block;
+        float: right;
+}
+
+#imsaundefined-link:hover
+{
+        background: rgb(256, 160, 100);
+        color: white;
+}
+
