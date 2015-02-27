@@ -89,7 +89,7 @@ $( document ).ready( function(){
 		});
         }, "xml");
 		
-	$(".footer").append("<footer><p class=\"footer-text\"><a href=\"/\"><img class=\"footer-logo\" src=\"/media/IMSA_Undefined_Logo_White.png\" alt=\"IMSA Undefined\"></a>&nbsp;&nbsp;&nbsp;Copyright &copy; imsa#undefined 2015</p></footer>");
+	$(".footer").append("<footer><p class=\"footer-text\"><a href=\"/\"><img class=\"footer-logo\" src=\"/media/IMSA_Undefined_Logo_White.png\" alt=\"#ndefined\"></a>&nbsp;&nbsp;&nbsp;Copyright &copy; #undefined 2015</p></footer>");
 });
 
 function getPreferredCalendars(form)

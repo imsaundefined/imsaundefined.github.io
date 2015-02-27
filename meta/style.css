@@ -246,3 +246,11 @@ hr
 	margin-right: auto;
 	width: 100%;
 }
+
+.body-box img.centered
+{
+	display: block;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
